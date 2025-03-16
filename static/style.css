@@ -1,0 +1,155 @@
+/* الحاوية العامة */
+.github-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 15px;
+  background: #f7f7f7;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Arial', sans-serif;
+}
+
+/* تنسيق النموذج */
+.github-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.github-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.github-form input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.github-submit-btn {
+  padding: 10px 20px;
+  background-color: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.github-submit-btn:hover {
+  background-color: #005177;
+}
+
+/* تنسيق البطاقة */
+.github-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease;
+  position: relative;
+  margin-top: 20px;
+}
+
+.github-card-header {
+  background: #0073aa;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-card-header h2 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.github-card-header h2 span {
+  font-size: 0.8em;
+  color: #e0e0e0;
+}
+
+/* زر الإغلاق */
+.github-clear-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.github-clear-btn:hover {
+  color: #ffdddd;
+}
+
+.github-card-body {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* صورة المستخدم */
+.github-avatar {
+  flex: 0 0 120px;
+  text-align: center;
+}
+
+.github-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #0073aa;
+}
+
+/* معلومات المستخدم */
+.github-info {
+  flex: 1 1 250px;
+}
+
+.github-info p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 0.95em;
+}
+
+.github-info a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.github-info a:hover {
+  text-decoration: underline;
+}
+
+/* إحصائيات المستخدم */
+.github-stats {
+  flex: 1 1 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.github-stats p {
+  margin: 0;
+  flex: 1 1 45%;
+  font-weight: bold;
+  color: #333;
+}
+
+/* تأثير الظهور التدريجي */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

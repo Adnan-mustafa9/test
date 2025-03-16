@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تقرير GitHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // عند الضغط على زر الإغلاق، يتم إزالة البطاقة بتأثير تلاشي.
+        $('.github-container').on('click', '.github-clear-btn', function() {
+            $(this).closest('.github-card').slideUp(300, function() {
+                $(this).remove();
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="github-container">
+        <form method="post" action="/" class="github-form">
+            <label for="github_username">أدخل اسم مستخدم GitHub:</label>
+            <input type="text" id="github_username" name="github_username" placeholder="مثلاً: octocat" required>
+            <button type="submit" class="github-submit-btn">عرض التقرير</button>
+        </form>
+        {% if stats %}
+        <div class="github-card">
+            <div class="github-card-header">
+                <h2>{{ stats.name }} <span>({{ stats.username }})</span></h2>
+                <button type="button" class="github-clear-btn" title="مسح التقرير">&times;</button>
+            </div>
+            <div class="github-card-body">
+                <div class="github-avatar">
+                    <img src="{{ stats.avatar_url }}" alt="Avatar of {{ stats.username }}">
+                </div>
+                <div class="github-info">
+                    <p><strong>السيرة الذاتية:</strong> {{ stats.bio }}</p>
+                    <p><strong>الموقع:</strong> {{ stats.location }}</p>
+                    {% if stats.blog %}
+                    <p><strong>الموقع الإلكتروني:</strong> <a href="{{ stats.blog }}" target="_blank">{{ stats.blog }}</a></p>
+                    {% endif %}
+                </div>
+                <div class="github-stats">
+                    <p><strong>المتابعون:</strong> {{ stats.followers }}</p>
+                    <p><strong>المتابَعون:</strong> {{ stats.following }}</p>
+                    <p><strong>المستودعات:</strong> {{ stats.public_repos }}</p>
+                    <p><strong>إجمالي النجوم:</strong> &#9733; {{ stats.total_stars }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
